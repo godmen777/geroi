@@ -1,0 +1,119 @@
+.quote{
+  position: relative;
+  margin-bottom: 18px;
+  padding: 95px 15px 15px;
+  @include pt-sans;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 600;
+  background-color: #ebebeb;
+
+  p{
+    margin-bottom: 18px;
+
+    &:last-child{
+      font-weight: 400;
+      font-style: italic;
+      font-size: 18px;
+      line-height: 24px;
+    }
+
+  }
+
+  &__pagination{
+    display: flex;
+    justify-content: center;
+    align-content: stretch;
+    position: absolute;
+    left: 0;
+    bottom: 16px;
+    width: 100%;
+    z-index: 1;
+
+    span{
+      width: 9px;
+      height: 9px;
+      margin: 0 3px!important;
+      border-radius: 0;
+      background-color: #000;
+      opacity: 1;
+      transition: background-color .3s ease;
+
+      &.swiper-pagination-bullet-active{
+        background-color: #b71515;
+      }
+
+    }
+
+  }
+
+  &__slide{
+    opacity: 0!important;
+
+    &.swiper-slide-active{
+      opacity: 1!important;;
+    }
+
+  }
+
+}
+@media (min-width: $phone-landscape) {
+  .quote{
+    margin-bottom: 20px;
+    padding-top: 123px;
+    padding-bottom: 21px;
+    font-size: 20px;
+
+    p{
+      margin-bottom: 27px;
+    }
+
+  }
+}
+@media (min-width: $tablet-portrait) {
+  .quote{
+    margin-bottom: 25px;
+    padding: 127px 58px 18px;
+    text-align: center;
+
+    &__pagination{
+      bottom: 20px;
+    }
+
+  }
+}
+@media (min-width: $tablet-landscape) {
+  .quote{
+    padding: 145px calc( 50% - 434px ) 57px;
+
+    p{
+      margin-bottom: 11px;
+    }
+
+  }
+}
+@media (min-width: $desktop) {
+  .quote{
+    margin-bottom: 49px;
+    padding-top: 150px;
+    padding-bottom: 53px;
+
+    &__pagination {
+      bottom: 24px;
+
+      span{
+
+        &:hover{
+          background-color: #b71515;
+        }
+
+        &.swiper-pagination-bullet-active{
+          cursor: default;
+        }
+
+      }
+
+    }
+
+  }
+}

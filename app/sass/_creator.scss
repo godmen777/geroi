@@ -1,0 +1,24 @@
+.creator{
+  padding: 100px calc( 50% - 450px ) 40px;
+  @include pt-sans;
+  font-size: 14px;
+
+  &__label{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 15px;
+
+    span{
+      min-width: 150px;
+      margin-right: 5px;
+    }
+
+  }
+
+}
+
+.widget{
+  left: auto;
+  right: 10px;
+}

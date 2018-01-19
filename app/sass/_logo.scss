@@ -1,0 +1,31 @@
+.logo{
+  position: absolute;
+  top: calc( 50% - 10px );
+  left: 15px;
+  width: 132px;
+  margin-right: 20px;
+  z-index: 2;
+  transition: opacity .3s ease, visibility .3s ease;
+  opacity: 0;
+  visibility: hidden;
+
+  img{
+    display: block;
+    width: 100%;
+  }
+
+}
+@media (min-width: $phone-landscape) {
+  .logo{
+    position: relative;
+    top: -2px;
+    left: 0;
+    opacity: 1;
+    visibility: visible;
+  }
+}
+@media (min-width: $tablet-portrait) {
+  .logo{
+    margin-right: 62px;
+  }
+}

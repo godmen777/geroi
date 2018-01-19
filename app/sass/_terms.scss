@@ -1,0 +1,87 @@
+.terms{
+  margin-bottom: 35px;
+  padding: 88px 15px 0;
+  color: #141414;
+  @include georgia;
+  font-size: 16px;
+  line-height: 22px;
+
+  h1, h4{
+    @include pt-sans;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  h1{
+    margin-bottom: 21px;
+    font-size: 21px;
+    line-height: 26px;
+  }
+
+  h4{
+    margin-bottom: 26px;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -.2px;
+  }
+
+  &__wrap{
+    margin-bottom: 38px;
+  }
+
+  &__footer{
+    margin-bottom: 33px;
+    padding-top: 7px;
+    border-top: 1px solid #ccc;
+    color: #969696;
+    @include pt-sans;
+    font-size: 11px;
+  }
+
+}
+@media (min-width: $phone-landscape) {
+  .terms{
+    padding-bottom: 2px;
+    font-size: 18px;
+    line-height: 25px;
+
+  }
+}
+@media (min-width: $tablet-portrait) {
+  .terms{
+    line-height: 24px;
+
+    h1{
+      font-size: 26px;
+      line-height: 45px;
+    }
+
+    h4{
+      font-size: 21px;
+      line-height: 26px;
+    }
+
+    &__footer{
+      margin-bottom: 41px;
+    }
+
+  }
+}
+@media (min-width: $tablet-landscape) {
+  .terms{
+    font-size: 20px;
+    line-height: 26px;
+
+    &__footer{
+      margin-bottom: 65px;
+    }
+
+  }
+}
+@media (min-width: $desktop) {
+  .terms{
+    margin-bottom: 134px;
+    padding: 148px calc( 50% - 586px) 0;
+
+  }
+}

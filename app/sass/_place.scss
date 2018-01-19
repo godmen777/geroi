@@ -1,0 +1,292 @@
+.place{
+  @include pt-sans;
+  font-size: 13px;
+  letter-spacing: .3px;
+
+  &__current{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: #f00;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &:after{
+      position: relative;
+      display: inline-block;
+      width: 12px;
+      height: 8px;
+      margin-left: 9px;
+      background: url(../img/icon-triangle.png) no-repeat 0 0;
+      background-size: cover;
+      content: '';
+      -webkit-transition: transform .3s ease;
+      transition: transform .3s ease;
+    }
+
+  }
+
+  &__popup{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    height: calc( 100vh - 60px );
+    padding: 18px 16px 20px;
+    background-color: #000;
+    line-height: 24px;
+    opacity: 0;
+    visibility: hidden;
+    transition: top .3s ease, opacity .3s ease, visibility .3s ease;
+
+    &-close{
+      display: block;
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      width: 32px;
+      height: 32px;
+      border: 1px solid #fff;
+      z-index: 1;
+
+      &:before,
+      &:after{
+        position: absolute;
+        top: 3px;
+        left: 14px;
+        width: 1px;
+        height: 24px;
+        background-color: #fff;
+        content: '';
+      }
+
+      &:before{
+        transform: rotate(45deg);
+      }
+
+      &:after{
+        transform: rotate(-45deg);
+      }
+
+    }
+
+  }
+
+  &__countries{
+    height: 36px;
+    user-select: none;
+    margin: 0 45px 18px 0;
+    overflow: hidden;
+
+    .swiper-slide{
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      width: auto;
+    }
+
+    &-item{
+      margin-left: 33px;
+      padding: 2px 8px;
+      border: 2px solid transparent;
+      color: #fff;
+      font-size: 16px;
+      transition: border-color .3s ease;
+
+      &.active{
+        border-color: #f00;
+      }
+
+      &:first-child{
+        margin-left: 0;
+      }
+
+    }
+
+  }
+
+  &__cities{
+    width: 100%;
+    height: 100%;
+
+    a{
+      color: #fff;
+    }
+
+    dl{
+      padding-top: 20px;
+      padding-left: 15px;
+      font-size: 16px;
+      line-height: 27px;
+
+      &:first-child{
+        padding-top: 0;
+
+        dt:first-child:after{
+          content: '';
+          position: absolute;
+          top: calc( 50% - 4px);
+          left: -15px;
+          width: 6px;
+          height: 6px;
+          border-radius: 10px;
+          background-color: #f00;
+        }
+
+      }
+
+    }
+
+    dt{
+      position: relative;
+      color: #f00;
+      font-size: 16px;
+    }
+
+    dd{
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 26px;
+
+      &:last-child{
+        margin-bottom: 0;
+      }
+
+    }
+
+  }
+
+  &__scrollbar-measure {
+    overflow: scroll;
+    position: absolute;
+    top: -9999px;
+    width: 100px;
+    height: 100px;
+  }
+
+  &.show{
+
+    .place__current:after{
+      transform: rotate(180deg);
+    }
+
+    .place__popup{
+      top: 100%;
+      opacity: 1;
+      visibility: visible;
+    }
+
+  }
+
+}
+
+@media (min-width: $phone-landscape) {
+  .place{
+
+    &__popup{
+      height: calc( 100vh - 72px );
+    }
+
+    &__countries{
+      padding: 0;
+    }
+
+  }
+}
+
+@media (min-width: $tablet-portrait) {
+  .place{
+
+    &__popup{
+      padding: 48px 16px 30px;
+
+      &-close{
+        top: 48px;
+      }
+
+    }
+
+    &__countries{
+      margin: 0 0 54px 0;
+      overflow: visible;
+    }
+
+    &__cities{
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+
+      dl{
+        width: 21%;
+        margin-left: 5%;
+
+        &:first-child {
+          margin-left: 0;
+        }
+
+      }
+
+    }
+
+  }
+}
+
+@media (min-width: $desktop) {
+  .place{
+
+    &__countries{
+
+      &-item{
+        transition: color .3s ease;
+
+        &:hover{
+          color: #f00;
+        }
+
+        &.active{
+          color: #fff!important;
+          cursor: default;
+        }
+
+      }
+
+    }
+
+    &__popup{
+      height: calc( 100vh - 82px );
+      padding-top: 48px;
+
+      &-close{
+        transition: border-color .3s ease;
+
+        &:before,
+        &:after{
+          transition: background-color .3s ease;
+        }
+
+        &:hover{
+          border-color: #f00;
+
+          &:before,
+          &:after{
+            background-color: #f00;
+          }
+
+        }
+
+      }
+
+    }
+
+    &__cities{
+
+      a:hover{
+        text-decoration: underline;
+      }
+
+    }
+
+  }
+}

@@ -1,0 +1,284 @@
+.article{
+  margin-bottom: 55px;
+  padding: 0 15px;
+  @include georgia;
+  font-size: 16px;
+  line-height: 22px;
+
+  img{
+    display: block;
+    max-width: 100%;
+    margin: 0 auto 8px;
+  }
+
+  &__content{
+
+    & > p{
+      margin-bottom: 20px;
+    }
+
+    a{
+      color: #f00;
+      border-bottom: 1px solid #f00;
+    }
+
+    h2{
+      margin-bottom: 18px;
+      @include georgia;
+      font-size: 24px;
+      line-height: 28px;
+    }
+
+  }
+
+  &__info{
+    margin-bottom: 21px;
+    color: #666;
+    @include pt-sans;
+    font-size: 15px;
+    line-height: 24px;
+
+    span{
+      color: #c00;
+    }
+
+  }
+
+  &__preview{
+    width: 200px;
+    margin: 0 auto 35px;
+  }
+
+  &__picture{
+    margin-bottom: 29px;
+    color: #969696;
+    @include pt-sans;
+    font-size: 12px;
+    text-align: center;
+
+    a{
+      color: inherit;
+    }
+
+  }
+
+  &__video{
+    width: 290px;
+    margin: 0 auto 27px;
+
+    iframe{
+      width: 100%;
+      height: 160px;
+      margin-bottom: 15px;
+    }
+
+  }
+
+  &__footer{
+    margin-bottom: 33px;
+    padding-top: 7px;
+    border-top: 1px solid #ccc;
+    color: #969696;
+    @include pt-sans;
+    font-size: 11px;
+  }
+
+  &__subscribe{
+    margin-bottom: 25px;
+    color: #f00;
+    @include pt-sans;
+    font-size: 15px;
+
+    & > div{
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin-top: 8px;
+    }
+
+    &-item{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 32px;
+      height: 32px;
+      margin-right: 9px;
+
+      &:nth-child(1){
+        background-color: #4d75a3;
+      }
+
+      &:nth-child(2){
+        background-color: #55acee;
+      }
+
+      &:nth-child(3){
+        background-color: #3b5998;
+      }
+
+      &:nth-child(4){
+        background-color: #e67e17;
+      }
+
+      &:nth-child(5){
+        background-color: #37aee2;
+      }
+
+    }
+
+    svg{
+      width: 21px;
+      fill: #fff;
+    }
+
+  }
+
+}
+@media (min-width: $phone-landscape) {
+  .article{
+    font-size: 18px;
+    line-height: 25px;
+
+    &__content{
+
+      h2{
+        margin-bottom: 22px;
+        font-size: 30px;
+        line-height: 33px;
+      }
+
+    }
+
+    &__video {
+      width: 480px;
+
+      iframe{
+        height: 270px;
+      }
+
+    }
+
+    &__subscribe{
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      & > div{
+        margin: 8px 0 0 15px;
+      }
+
+    }
+
+  }
+}
+@media (min-width: $tablet-portrait) {
+  .article{
+    line-height: 24px;
+
+    &__preview{
+      width: 241px;
+      margin-bottom: 0!important;
+    }
+
+    &__content {
+
+      & > p {
+        margin-bottom: 27px;
+      }
+
+      h2 {
+        margin-bottom: 10px;
+        font-size: 36px;
+      }
+
+    }
+
+    &__info{
+      padding-top: 15px;
+      font-size: 16px;
+    }
+
+    &__picture{
+      margin-bottom: 37px;
+
+      img{
+        margin-bottom: 14px;
+      }
+
+    }
+
+    &__video {
+      width: 640px;
+      margin-bottom: 44px;
+
+      iframe{
+        height: 360px;
+        margin-bottom: 7px;
+      }
+
+    }
+
+    &__footer{
+      margin-bottom: 41px;
+    }
+
+    .alt-left{
+      float: left;
+      margin-right: 31px;
+    }
+
+  }
+}
+@media (min-width: $tablet-landscape) {
+  .article{
+    font-size: 20px;
+    line-height: 28px;
+
+    &__content{
+      padding: 0 calc( 50% - 450px );
+
+      h2{
+        font-size: 32px;
+      }
+
+      > p{
+        margin-bottom: 32px;
+      }
+
+    }
+
+    &__footer{
+      margin-bottom: 65px;
+    }
+
+    &__preview {
+      width: 290px;
+    }
+
+    &__info{
+      padding-top: 32px;
+      font-size: 18px;
+      line-height: 28px;
+    }
+
+    .alt-left{
+      margin-right: 38px;
+    }
+
+  }
+}
+@media (min-width: $desktop) {
+  .article{
+    padding: 0 calc( 50% - 580px );
+
+    a{
+      transition: border-bottom-color .3s ease;
+
+      &:hover{
+        border-bottom-color: transparent;
+      }
+
+    }
+
+  }
+}

@@ -1,0 +1,231 @@
+.feats{
+  margin: 0 15px 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e0e0e0;
+
+  &__title{
+    margin-bottom: 9px;
+    @include pt-sans;
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 45px;
+    text-transform: uppercase;
+  }
+
+  &__topic{
+    margin-bottom: 14px;
+    @include georgia;
+    font-size: 22px;
+    line-height: 24px;
+  }
+
+  &__item{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-content: flex-start;
+    position: relative;
+    height: 267px;
+    margin-bottom: 13px;
+    padding: 15px 17px;
+    border-radius: 3px;
+    color: #fff;
+    @include pt-sans;
+    font-size: 14px;
+    line-height: 14.88px;
+    overflow: hidden;
+
+    img{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      transform: translate(-50%, -50%);
+    }
+
+    & > div{
+      position: relative;
+      z-index: 1;
+
+      p{
+        margin-bottom: 24px;
+        margin-right: 10px;
+      }
+
+      p:last-of-type{
+        margin-bottom: 0;
+        color: #666;
+        font-size: 12px;
+      }
+
+    }
+
+    &:after{
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.81) 70%, rgba(0,0,0,0.79) 100%);
+      background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.81) 70%,rgba(0,0,0,0.79) 100%);
+      background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.81) 70%,rgba(0,0,0,0.79) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#c9000000',GradientType=0 );
+      content: '';
+    }
+
+  }
+
+  & + .about p{
+    margin-bottom: 17px;
+  }
+
+}
+@media (min-width: $phone-landscape) {
+  .feats{
+    margin-bottom: 30px;
+
+    &__title{
+      margin-bottom: 15px;
+    }
+
+    &__topic{
+      margin-bottom: 11px;
+      font-size: 22px;
+      line-height: 23px;
+    }
+
+    &__item{
+      padding: 15px 35px 15px 23px;
+
+      & > div{
+
+        p{
+          margin-bottom: 13px;
+        }
+
+      }
+
+    }
+
+    & + .about p{
+      margin-bottom: 22px;
+    }
+
+  }
+}
+@media (min-width: $tablet-portrait) {
+  .feats{
+
+    &__topic{
+      margin-bottom: 16px;
+      font-size: 33px;
+      line-height: 36px;
+    }
+
+    &__item{
+      height: 414px;
+      margin-bottom: 18px;
+      padding: 17px calc( 50% - 300px) 28px 36px;
+      font-size: 18px;
+      line-height: 23px;
+
+      & > div{
+
+        p{
+          margin-bottom: 17px;
+        }
+
+      }
+
+    }
+
+  }
+}
+@media (min-width: $tablet-landscape) {
+  .feats{
+    margin-bottom: 39px;
+    padding: 15px calc( 50% - 434px) 20px;
+
+    &__topic{
+      font-size: 37px;
+      line-height: 42px;
+    }
+
+    &__item{
+      height: 467px;
+      margin-bottom: 20px;
+      padding-left: 42px;
+
+      &:after{
+        transition: transform .3s ease;
+      }
+
+      &:hover{
+
+        &:after{
+          transform: translateY( 25% );
+        }
+
+      }
+
+      & > div p{
+        margin-bottom: 26px;
+      }
+
+    }
+
+  }
+}
+@media (min-width: $desktop) {
+  .feats{
+    position: relative;
+    margin: 0 calc( 50% - 585px) 38px calc( 50% - 254px);
+    padding: 0 0 22px;
+    border-bottom: none;
+
+    &:after{
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 1170px;
+      content: '';
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    &__title{
+      margin-bottom: 19px;
+    }
+
+    &__topic{
+      margin-bottom: 20px;
+      font-size: 38px;
+      line-height: 41px;
+    }
+
+    &__item{
+      margin-bottom: 21px;
+      padding: 17px calc( 50% - 330px) 30px 42px;
+
+      & > div{
+
+        p{
+          letter-spacing: .9px;
+
+          &:last-child{
+            font-size: 14px;
+            letter-spacing: 0;
+          }
+
+        }
+
+      }
+
+    }
+
+    & + .about{
+      padding: 0 calc( 50% - 585px);
+    }
+
+  }
+}

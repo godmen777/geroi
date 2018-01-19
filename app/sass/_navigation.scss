@@ -1,0 +1,160 @@
+.navigation {
+  margin-bottom: 18px;
+  border: 1px solid #dcdcdc;
+
+  &__item{
+    height: 59px;
+    @include pt-sans;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 600;
+    border-bottom: 1px solid #dcdcdc;
+    transition: height .3s ease;
+    overflow: hidden;
+
+    & > a{
+      display: block;
+      color: #000;
+      text-transform: uppercase;
+      padding: 17px 17px 16px 21px;
+
+      &:before{
+        display: inline-block;
+        position: relative;
+        top: 1px;
+        width: 12px;
+        margin-right: 17px;
+        content: '+';
+        font-size: 21px;
+        line-height: 1;
+      }
+
+    }
+
+    &:last-child{
+      border-bottom: none;
+    }
+
+    ul{
+      padding: 13px 10px 17px 48px;
+      background-color: #ebebeb;
+      font-size: 16px;
+      line-height: 28px;
+
+      a{
+        color: #000;
+      }
+
+    }
+
+    &.show{
+
+      & > a:before{
+        content: '-';
+      }
+
+    }
+
+  }
+
+}
+@media (min-width: $phone-landscape) {
+  .navigation{
+    margin-bottom: 26px;
+
+    &__item{
+
+      & > a{
+
+        &:before{
+          margin-right: 14px;
+        }
+
+      }
+
+    }
+
+  }
+}
+@media (min-width: $tablet-portrait) {
+  .navigation{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: none;
+
+    &__item{
+      position: relative;
+      width: 50%;
+      overflow: visible;
+
+      &:nth-child(odd){
+        border-right: 1px solid #dcdcdc;
+      }
+
+      &:last-child {
+        border-bottom: 1px solid #dcdcdc;
+      }
+
+      ul{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 1;
+        transition: opacity .3s ease, visibility .3s ease;
+      }
+
+      &.show{
+
+        ul{
+          opacity: 1;
+          visibility: visible;
+        }
+
+      }
+
+    }
+
+  }
+}
+@media (min-width: $tablet-portrait) {
+  .navigation{
+    margin-bottom: 42px;
+  }
+}
+@media (min-width: $desktop) {
+  .navigation{
+    display: block;
+
+    &__item{
+      width: 100%;
+      overflow: hidden;
+
+      a{
+        transition: color .3s ease;
+
+        &:hover{
+          color: #f00;
+        }
+
+      }
+
+      &:nth-child(odd){
+        border-right: none;
+      }
+
+      ul{
+        position: relative;
+        top: 0;
+        opacity: 1;
+        visibility: visible;
+      }
+
+    }
+
+  }
+}

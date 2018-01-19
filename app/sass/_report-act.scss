@@ -1,0 +1,52 @@
+.report-act{
+  margin-bottom: 20px;
+  padding: 30px 15px 34px;
+  background-color: #ebebeb;
+  color: #000;
+  @include georgia;
+  font-size: 17px;
+  line-height: 22px;
+  text-align: center;
+
+  p{
+    margin-bottom: 29px;
+  }
+
+}
+@media (min-width: $phone-landscape) {
+  .report-act{
+    padding: 40px 66px 55px;
+    font-size: 18px;
+    line-height: 25px;
+
+    p{
+      margin-bottom: 32px;
+    }
+
+  }
+}
+@media (min-width: $tablet-portrait) {
+  .report-act{
+    margin-bottom: 32px;
+    padding: 61px 36px 55px;
+
+    p{
+      margin-bottom: 34px;
+    }
+
+  }
+}
+@media (min-width: $tablet-landscape) {
+  .report-act{
+    margin: 0 15px 51px;
+    padding: 61px calc( 50% - 400px ) 55px;
+  }
+}
+@media (min-width: $desktop) {
+  .report-act{
+    max-width: 1170px;
+    margin: 0 auto 63px;
+    padding: 61px calc( 50% - 427px) 55px;
+    font-size: 20px;
+  }
+}

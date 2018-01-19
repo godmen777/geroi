@@ -1,0 +1,254 @@
+.gratitude{
+  margin-bottom: 31px;
+  padding: 0 15px;
+
+  &__list{
+    overflow: hidden;
+  }
+
+  &__item{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-content: flex-start;
+    position: relative;
+    height: 267px;
+    margin-bottom: 16px;
+    padding: 15px 17px;
+    border-radius: 3px;
+    color: #fff;
+    @include pt-sans;
+    font-size: 16px;
+    line-height: 18px;
+    overflow: hidden;
+
+    img{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      transform: translate(-50%, -50%);
+    }
+
+    & > div{
+      position: relative;
+      z-index: 1;
+
+      p{
+        margin-bottom: 15px;
+      }
+
+      p:last-of-type{
+        margin-bottom: 0;
+        color: #666;
+        font-size: 12px;
+      }
+
+    }
+
+    &:after{
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.81) 70%, rgba(0,0,0,0.79) 100%);
+      background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.81) 70%,rgba(0,0,0,0.79) 100%);
+      background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.81) 70%,rgba(0,0,0,0.79) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#c9000000',GradientType=0 );
+      content: '';
+    }
+
+  }
+
+  &__topic{
+    margin-bottom: 14px;
+    @include georgia;
+    font-size: 22px;
+    line-height: 24px;
+  }
+
+  &__pagination{
+    display: flex;
+    justify-content: center;
+    align-content: stretch;
+    margin-top: 2px;
+    z-index: 1;
+
+    span{
+      width: 9px;
+      height: 9px;
+      margin: 0 3px!important;;
+      border-radius: 0;
+      background-color: #000;
+      opacity: 1;
+      transition: background-color .3s ease;
+
+      &.swiper-pagination-bullet-active{
+        background-color: #b71515;
+      }
+
+    }
+
+  }
+
+}
+@media (min-width: $phone-landscape) {
+  .gratitude{
+
+    &__topic{
+      font-size: 26px;
+      line-height: 28px;
+    }
+
+    &__item{
+      padding: 15px 35px 15px 23px;
+
+      & > div{
+
+        p{
+          margin-bottom: 13px;
+        }
+
+      }
+
+    }
+
+    &__pagination{
+      margin-top: 0;
+    }
+
+  }
+}
+@media (min-width: $tablet-portrait) {
+  .gratitude{
+    padding: 0 23px;
+
+    &__topic{
+      font-size: 30px;
+      line-height: 32px;
+    }
+
+    &__slide{
+      display: flex;
+      flex-flow: wrap row;
+      justify-content: space-between;
+      align-items: stretch;
+    }
+
+    &__item{
+      margin-bottom: 14px;
+
+      & > div{
+
+        p{
+          margin-bottom: 17px;
+        }
+
+      }
+
+      &:nth-child( 1 ),
+      &:nth-child( 4 ){
+        height: 400px;
+        padding: 17px calc( 50% - 150px ) 23px 36px;
+        font-size: 18px;
+        line-height: 23px;
+
+        .gratitude__topic {
+          font-size: 34px;
+          line-height: 35px;
+        }
+
+      }
+
+      &:nth-child( 2 ),
+      &:nth-child( 3 ){
+        width: 49%;
+        height: 330px;
+        padding: 17px calc( 50% - 335px) 23px 27px;
+        font-size: 15px;
+        line-height: 19px;
+      }
+
+    }
+
+    &__pagination{
+      margin-top: 7px;
+    }
+
+  }
+}
+@media (min-width: $tablet-landscape) {
+  .gratitude{
+    margin-bottom: 48px;
+    padding: 0 calc( 50% - 361px );
+
+    &__item{
+
+      &:after{
+        transition: transform .3s ease;
+      }
+
+      &:hover{
+
+        &:after{
+          transform: translateY( 25% );
+        }
+
+      }
+
+    }
+
+  }
+}
+@media (min-width: $desktop) {
+  .gratitude{
+    margin-bottom: 40px;
+    padding: 0 calc( 50% - 584px );
+
+    &__item{
+      margin-bottom: 18px;
+
+      &:nth-child( 1 ),
+      &:nth-child( 4 ){
+        width: 720px;
+        padding: 17px calc( 50% - 384px) 23px 36px;
+      }
+
+      &:nth-child( 2 ),
+      &:nth-child( 3 ){
+        width: 430px;
+        height: 400px;
+        padding: 17px 35px 23px;
+        font-size: 18px;
+        line-height: 23px;
+
+        .gratitude__topic{
+          margin-bottom: 22px;
+        }
+
+      }
+
+    }
+
+    &__pagination {
+      margin-top: 0;
+      padding-left: 451px;
+
+      span{
+
+        &:hover{
+          background-color: #b71515;
+        }
+
+        &.swiper-pagination-bullet-active{
+          cursor: default;
+        }
+
+      }
+
+    }
+
+  }
+}
